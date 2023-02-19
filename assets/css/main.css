@@ -12,3 +12,8 @@
 .active {
     border-radius: 0px 0px 4px 4px;
 }
+
+
+* {
+    transition: all 0.3s ease-in-out;
+}

@@ -3,7 +3,7 @@
        <div class=" w-full h-full">
          <slot />
        </div>
-       <div class=" fixed bottom-10 px-10  inset-x-0  max-w-[400px]  m-auto">
+       <div class=" fixed bottom-10 px-10  inset-x-0  max-w-[400px]  m-auto z-40">
             <Navigation />
        </div>
     </div>

@@ -13,7 +13,8 @@ module.exports = {
       colors:{
         background: '#F8F9FA',
         primary: '#4F4F4F',
-        secondary: '#4A4E69'
+        secondary: '#4A4E69',
+        tertiary: '#F28F8F',
       },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
