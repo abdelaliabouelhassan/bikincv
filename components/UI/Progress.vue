@@ -25,7 +25,7 @@
             </div>
             <div class=" w-full h-[115px] max-w-[96px] px-5 py-3 bg-white rounded-[18px] flex">
               <div class=" w-full flex items-center flex-col space-y-1 m-auto">
-                  <ProgressCounter :step="step" v-if="step <= 7"/>
+                  <ProgressCounter :step="step" v-if="step <= 8"/>
                   <button v-else class="  w-[50px] h-[50px] bg-tertiary rounded-full border-[2px] border-tertiary flex hover:bg-opacity-70 hover:border-opacity-80" style="box-shadow: 2px 2px 6px #F28F8F;">
                     <span class=" m-auto text-white text-xs font-montserrat font-semibold">Next</span>
                   </button>
@@ -41,31 +41,32 @@
 import IconArrowLeft from '@/components/Icons/IconArrowLeft.vue'
 import IconArrowRight from '@/components/Icons/IconArrowRight.vue'
 import ProgressCounter from '@/components/UI/ProgressCounter.vue'
-export default {
+import { usesteps } from "@/composables/states";
+
+export default defineComponent({
+  setup() {
+    const step = usesteps();
+    const router = useRouter();
+    const Next = () => {
+      if (step.value < 9) {
+        step.value += 1;
+      }
+    };
+    const Prev = () => {
+      if (step.value > 1) {
+        step.value -= 1;
+      }else{
+        step.value = 0;
+        //go back
+        router.back();
+      }
+    };
+    return { step, Next, Prev };
+  },
     components: {
         IconArrowLeft,
         IconArrowRight,
-        ProgressCounter
+        ProgressCounter,
     },
-    data(){
-        return {
-            step:0,
-        }
-    },
-    methods:{
-        Next(){
-            if(this.step < 8)
-             {
-                this.step += 1
-             }
-        },
-        Prev(){
-            if(this.step > 0)
-             {
-                this.step -= 1
-             }
-        }
-    }
-    
-}
+});
 </script>
