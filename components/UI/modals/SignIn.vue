@@ -1,9 +1,9 @@
 <template>
 <div class="relative z-50" aria-labelledby="modal-title" role="dialog" aria-modal="true" v-if="show">
 
-  <div class="fixed inset-0 bg-[#70707099]  transition-opacity"></div>
 
   <div class="fixed inset-0 z-50 overflow-y-auto">
+    <div class="fixed inset-0 bg-[#70707099]  transition-opacity" @click="closeModal"></div>
     <div class="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
       
       <div class="relative py-10 transform overflow-hidden rounded-[14px] bg-white text-left shadow-xl transition-all sm:my-8 w-full max-w-[335px]">
