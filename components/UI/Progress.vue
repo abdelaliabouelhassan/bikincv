@@ -14,7 +14,7 @@
                        <IconArrowLeft />
                     </button>
                     <div class=" flex items-center space-x-2">
-                        <button class=" text-primary text-xs font-normal font-montserrat rounded-full border border-primary px-3 py-1 hover:text-opacity-70 hover:border-opacity-70">Skip</button>
+                        <button v-if="step < 2" class=" text-primary text-xs font-normal font-montserrat rounded-full border border-primary px-3 py-1 hover:text-opacity-70 hover:border-opacity-70">Skip</button>
                         <button @click="Next" class="  text-xs font-normal font-montserrat rounded-full px-2 py-1 bg-tertiary text-white flex items-center space-x-1  hover:bg-opacity-70">
                             <span>Next</span>
                             <IconArrowRight />
