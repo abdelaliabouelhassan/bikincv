@@ -3,9 +3,9 @@
         <div class=" w-full flex items-start justify-between h-full">
             <div class=" max-w-[212px] w-full px-5 py-3 bg-white rounded-[18px] space-y-4">
                 <div class=" w-full space-y-1">
-                    <span class=" text-primary text-[18.75px] leading-[22.86px] font-montserrat font-semibold">Foto</span>
+                    <span class=" text-primary text-[18.75px] leading-[22.86px] font-montserrat font-semibold">{{steps[step].title}}</span>
                     <p class=" text-[9.6px] font-light font-montserrat text-primary leading-[11.7px]">
-                        Pastikan foto yang di upload memiliki Size Paling rendah 3,2 mb
+                        {{steps[step].description}}
                     </p>
                 </div>
 
@@ -47,6 +47,48 @@ export default defineComponent({
   setup() {
     const step = usesteps();
     const router = useRouter();
+    const steps = ref([
+      {
+        title:'',
+        description:'',
+      },
+      {
+        title: "Foto",
+        description: "Pastikan foto yang di upload memiliki Size Paling rendah 3,2 mb",
+      },
+      {
+        title:'Data Diri',
+        description:'Pastikan semua data  terisi dengan lengkap dan benar',
+      },
+      {
+        title:'Kemampuan',
+        description:'Pastikan kemampuan yang di isi adalah kampuan kamu yang ',
+      },
+      {
+        title:'Pendidikan',
+        description:'Hanya disi dengan 2 pendidikan terakhir.',
+      },
+      {
+        title:'Pengalaman Kerja',
+        description:'Diisi dengan pengalaman paling dekat paling akhir ',
+      },
+      {
+        title:'Organisasi',
+        description:'Organisasi hanya optional jika tidak ada pengalaman kerja',
+      },
+      {
+        title:'Sertifikat',
+        description:'Sertifikat yang relevan dengan karir yang kakak harapankan.',
+      },
+      {
+        title:'Kontak',
+        description:'Pastikan jangan tulis alamat Lengkap .',
+      },
+      {
+        title:'Kontak',
+        description:'Pastikan jangan tulis alamat Lengkap .',
+      },
+    ]);
     const Next = () => {
       if (step.value < 9) {
         step.value += 1;
@@ -61,7 +103,7 @@ export default defineComponent({
         router.back();
       }
     };
-    return { step, Next, Prev };
+    return { step, Next, Prev,steps };
   },
     components: {
         IconArrowLeft,
