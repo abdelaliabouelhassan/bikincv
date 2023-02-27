@@ -60,11 +60,10 @@ const props =  defineProps({
    const handleClickOutside = (event) => {
     if (!input.value.contains(event.target)) {
         if(document.getElementById("containerSelect")){
-              if(!document.getElementById("containerSelect").contains(event.target)){
-            show.value = false;
-        }
-        }
-      
+            if(!document.getElementById("containerSelect").contains(event.target)){
+                show.value = false;
+            }
+        }  
     }
     };
     onMounted(() => {
