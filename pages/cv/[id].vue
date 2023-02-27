@@ -1,7 +1,7 @@
 <template>
     <Progress />
 
-    <div class=" w-full p-5">
+    <div class=" w-full px-5 pt-5 pb-28">
         <Foto v-if="step == 1"/>
         <div v-else>
             <span class=" text-xl text-center font-montserrat">
