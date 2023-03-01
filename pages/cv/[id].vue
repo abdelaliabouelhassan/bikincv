@@ -8,12 +8,8 @@
         <Pendidikan v-else-if="step == 4"/>
         <PengalamanKerja v-else-if="step == 5"/>
         <Organisasi  v-else-if="step == 6"/>
-        <div v-else>
-            <span class=" text-xl text-center font-montserrat">
-                Coming soon ...
-            </span>
-        </div>
-
+        <Sertifikat v-else-if="step == 7"/>
+        <Kontak v-else-if="step == 8 || step == 9"/>
     </div>
 </template>
 
@@ -26,6 +22,8 @@
   import Pendidikan from '@/components/Forms/Pendidikan.vue'
   import PengalamanKerja from '@/components/Forms/PengalamanKerja.vue'
   import Organisasi from '@/components/Forms/Organisasi.vue'
+  import Sertifikat from '@/components/Forms/Sertifikat.vue'
+  import Kontak from '@/components/Forms/Kontak.vue'
   import { usesteps } from "@/composables/states";
 
   const step = usesteps();

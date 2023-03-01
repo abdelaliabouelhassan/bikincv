@@ -15,11 +15,11 @@
             <span class=" text-xs text-tertiary font-medium font-montserrat">Note :  </span>
            <p class=" text-xs text-tertiary font-medium font-montserrat">Tulis Deskripsi tugas dengan perpoint</p>
             <ol class=" list-decimal text-xs font-light text-primary font-montserrat pl-3 pt-2">
-                <li>Lorem ipsum dolor sit amet consectetur</li>
-                <li>Lorem ipsum dolor sit amet consectetur</li>
-                 <li>Lorem ipsum dolor sit amet consectetur</li>
                   <li>Lorem ipsum dolor sit amet consectetur</li>
-           
+                  <li>Lorem ipsum dolor sit amet consectetur</li>
+                  <li>Lorem ipsum dolor sit amet consectetur</li>
+                  <li>Lorem ipsum dolor sit amet consectetur</li>
+
             </ol>
         </div>
         </div>
