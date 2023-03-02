@@ -26,7 +26,7 @@
             <div class=" w-full h-[115px] max-w-[96px] px-5 py-3 bg-white rounded-[18px] flex">
               <div class=" w-full flex items-center flex-col space-y-1 m-auto">
                   <ProgressCounter :step="step" v-if="step <= 8"/>
-                  <button v-else class="  w-[50px] h-[50px] bg-tertiary rounded-full border-[2px] border-tertiary flex hover:bg-opacity-70 hover:border-opacity-80" style="box-shadow: 2px 2px 6px #F28F8F;">
+                  <button @click="FinishAndNext" v-else class="  w-[50px] h-[50px] bg-tertiary rounded-full border-[2px] border-tertiary flex hover:bg-opacity-70 hover:border-opacity-80" style="box-shadow: 2px 2px 6px #F28F8F;">
                     <span class=" m-auto text-white text-xs font-montserrat font-semibold">Next</span>
                   </button>
                   <span class=" text-primary font-normal text-[9.6px] font-montserrat">Complete</span>
@@ -47,6 +47,7 @@ export default defineComponent({
   setup() {
     const step = usesteps();
     const router = useRouter();
+    const route = useRoute();
     const steps = ref([
       {
         title:'',
@@ -103,12 +104,18 @@ export default defineComponent({
         router.back();
       }
     };
-    return { step, Next, Prev,steps };
+    const FinishAndNext = () => {
+      //go to next page
+      router.push('/price-list/' + route.params.id );
+    };
+    return { step, Next, Prev,steps,FinishAndNext };
   },
     components: {
         IconArrowLeft,
         IconArrowRight,
         ProgressCounter,
     },
+
+   
 });
 </script>

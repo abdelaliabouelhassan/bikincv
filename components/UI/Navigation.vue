@@ -28,16 +28,18 @@ import ShopIcon from '~/components/Icons/ShopIcon.vue'
 import { usesteps } from "@/composables/states";
 const step = usesteps();
 const router = useRouter();
+const route = useRoute();
 const setStep = (go) => {
   if (go == 0) {
     if(step.value >= 1){
          step.value = 0;
-         router.back();
+         router.push({ path: '/' });
     }
   }
   else if(go == 1){
     if(step .value> 9){
          step.value = 1;
+         router.push({ path: '/cv/'+ route.params.id });
     }
   }
 
