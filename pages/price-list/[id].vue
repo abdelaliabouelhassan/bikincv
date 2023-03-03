@@ -1,7 +1,7 @@
 <template>
     <div class=" w-full">
         <!-- header -->
-
+        <Features :PriceList="PriceList" />
 
         <!-- price list -->
 
@@ -17,6 +17,7 @@
 <script setup>
  import PriceCard from '@/components/UI/PriceCard.vue'
  import { usesteps } from "@/composables/states";
+ import Features from '~/components/UI/features.vue'
 
  const step = usesteps();
   onMounted(() => {
@@ -28,21 +29,29 @@
          price: '145.000',
          title: 'Premium',
          selected: false,
+         features:6, // features amount
+         colored:6, // colored features index
      },
        {
          price: '100.000',
          title: 'Standart +',
          selected: false,
+         features:5,
+         colored:1,
      },
        {
          price: '25.000',
          title: 'Basic',
          selected: false,
+         features:3,
+         colored:0, // 0 means no colored features
      },
        {
          price: '50.000',
          title: 'Standart',
          selected: true,
+         features:5,
+         colored:0,
      },
  ])
 
