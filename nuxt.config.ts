@@ -34,7 +34,7 @@ export default defineNuxtConfig({
         navigateFallback: "/",
       },
       devOptions: {
-        enabled: false,
+        enabled: true,
         type: "module",
       },
     },
