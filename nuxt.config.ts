@@ -30,7 +30,7 @@ export default defineNuxtConfig({
         ],
       },
       workbox: {
-        navigateFallback: "/",
+        navigateFallback: '/server/index.mjs',
       },
       devOptions: {
         enabled: true,
