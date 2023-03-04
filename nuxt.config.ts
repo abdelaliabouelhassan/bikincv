@@ -6,6 +6,7 @@ export default defineNuxtConfig({
         name: 'Project Name',
         short_name: 'Poject Short Name',
         description: 'Setup Nuxt  PWA',
+        start_url: 'https://bikincv.vercel.app/',
         icons: [
           {
             src: "icons/icon_16x16.png",
@@ -30,7 +31,7 @@ export default defineNuxtConfig({
         ],
       },
       workbox: {
-        navigateFallback: '/server/index.mjs',
+        navigateFallback: "/",
       },
       devOptions: {
         enabled: true,
