@@ -6,7 +6,7 @@ export default defineNuxtConfig({
         name: 'Project Name',
         short_name: 'Poject Short Name',
         description: 'Setup Nuxt  PWA',
-        start_url: 'https://bikincv.vercel.app/',
+        start_url: '/',
         icons: [
           {
             src: "icons/icon_16x16.png",
