@@ -42,6 +42,12 @@ const setStep = (go) => {
          router.push({ path: '/cv/'+ route.params.id });
     }
   }
+  else if(go == 2){
+    if(step.value > 10){
+         step.value = 9;
+         router.push({ path: '/price-list/'+ route.params.id });
+    }
+  }
 
 };
     

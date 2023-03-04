@@ -82,13 +82,14 @@
                 <div class=" text-[9.36px] font-montserrat text-primary font-light">
                     <span class=" text-black font-medium">FYI</span> : <br> [ CV ] Curriculum Vitae | Format PDF <br> [ SL ]  Surat Lamaran     | Format Ms. Word 
                 </div>
-                <button class=" text-[18.75px] text-white font-montserrat font-semibold text-center bg-tertiary w-[134px] h-[38px] rounded-xl hover:bg-opacity-70">NEXT</button>
+                <button @click="Next" class=" text-[18.75px] text-white font-montserrat font-semibold text-center bg-tertiary w-[134px] h-[38px] rounded-xl hover:bg-opacity-70">NEXT</button>
             </div>
         </div>
 </template>
 
 
 <script setup>
+ const router = useRouter()
  const props = defineProps(
     {
       PriceList: {
@@ -103,6 +104,10 @@
     const selectedPrice = computed(() => {
         return props.PriceList.find((item) => item.selected === true)
     })
+
+    const Next = () => {
+        router.push('/send/' + router.currentRoute.value.params.id)
+    }
     
    
 </script>

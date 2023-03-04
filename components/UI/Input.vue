@@ -17,6 +17,11 @@ const props =  defineProps({
       type: String,
       required: true,
     },
+    background:{
+      type: String,
+      required: false,
+      default: "bg-background rounded-xl",
+    }
   });
   const { label, placeholder, type, modelValue } = toRefs(props);
   const input = ref(null);
@@ -45,7 +50,8 @@ const props =  defineProps({
                 :type="type"
                 :placeholder="placeholder"
                 :value="modelValue"
-                class=" w-full p-3 bg-background rounded-xl text-[15px] text-primary font-normal font-montserrat outline-none placeholder-[#4F4F4F33]"
+                :class="background"
+                class=" w-full p-3   text-[15px] text-primary font-normal font-montserrat outline-none placeholder-[#4F4F4F33]"
                 @focus="focus"
                 @blur="blur"
                 @input="updateValue"
