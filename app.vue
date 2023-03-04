@@ -1,4 +1,5 @@
 <template>
+   <VitePwaManifest />
     <AppLayout>
         <NuxtPage />
     </AppLayout>
