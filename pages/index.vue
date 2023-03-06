@@ -19,7 +19,7 @@
                 :pagination="false"
                
                 @progress="onProgress"
-                @slidechange="onSlideChange" class=" py-4 space-x-5"
+                @slidechange="onSlideChange" class=" pt-10 pb-10 space-x-5"
               >
                 <swiper-slide class="max-w-[237.87px] rounded-[20px] w-full" v-for=" (cv,index,key) in cvs" :key="key" style="box-shadow: 8px 8px 20px rgba(79, 79, 79, 0.2);">
                   <Cv :cvcode="cv.cvcode" :image="cv.image"/>

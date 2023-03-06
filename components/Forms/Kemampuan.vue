@@ -10,12 +10,16 @@
         <div class=" w-full flex flex-col items-start space-y-4 py-8">
             <span class=" text-[18.75px] font-medium font-montserrat text-secondary">Bahasa</span>
             <div class=" grid grid-cols-3 gap-x-4" v-for="(item,index,key) in Bahasa" :key="key">
-                <Input class=" col-span-2" v-model="item.name" />
-                <SelectInput v-model="item.level" :options="[
+               <div class=" col-span-2 w-full">
+                 <Input  v-model="item.name" />
+               </div>
+               <div class=" w-full">
+                 <SelectInput v-model="item.level" :options="[
                 {lable:'Beginner',value:'beginner'},
                 {lable:'Intermediate',value:'intermediate'},
                 {lable:'Advance',value:'advance'}
                 ]" />
+               </div>
             </div>
              
             <button @click="AddBahasa" class=" bg-background p-3 rounded-xl hover:bg-opacity-75">

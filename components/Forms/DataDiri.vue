@@ -15,16 +15,7 @@
                  <Input label="Tempat Lahir" class=" col-span-2" v-model="form.TempatLahir"/>
                  <Input label="Tanggal Lahir" class=" col-span-1" v-model="form.TanggalLahir"/>
            </div>
-             <SelectInput label="Agama" v-model="form.Agama" :options="[
-             {lable:'Laki - Laki',value:'Laki - Laki'},
-             {lable:'Perempuan',value:'Perempuan'}
-             ]"/>
-           <div class=" grid grid-cols-2 gap-x-4 w-full">
-                  <SelectInput label="Jenis Kelamin" v-model="form.JenisKelamin" :options="[
-             {lable:'Belum Menikah',value:'Belum Menikah'},
-             {lable:'Menikah',value:'Menikah'}
-             ]"/>
-                  <SelectInput label="Status" v-model="form.Status" :options="[
+            <SelectInput label="Agama" v-model="form.Status" :options="[
              {lable:'Islam',value:'islam'},
              {lable:'Kristen - Katolik',value:'Kristen - Katolik'},
              {lable:'Kristen - Protestan',value:'Kristen - Protestan'},
@@ -32,6 +23,19 @@
              {lable:'Buddha',value:'Buddha'},
              {lable:'Konghucu',value:'Konghucu'},
              ]"/>
+            
+           <div class=" grid grid-cols-2 gap-x-4 w-full">
+              <SelectInput label="Jenis Kelamin" v-model="form.Agama" :options="[
+                {lable:'Laki - Laki',value:'Laki - Laki'},
+                {lable:'Perempuan',value:'Perempuan'}
+                ]"/>
+             <SelectInput label="Status" v-model="form.JenisKelamin" :options="[
+                {lable:'Belum Menikah',value:'Belum Menikah'},
+                {lable:'Menikah',value:'Menikah'}
+                ]"/>
+
+            
+           
            </div>
              <Input label="Kewarganegaraan" v-model="form.Kewarganegaraan" />
         </div>
