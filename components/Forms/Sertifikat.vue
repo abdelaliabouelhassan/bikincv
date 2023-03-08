@@ -3,7 +3,7 @@
         <div class=" w-full flex flex-col items-start space-y-4 pb-8 border-b" :class="{'pt-8': index > 0}" v-for="(item,index,key) in Sertifikat" :key="key">
             <span class=" text-[18.75px] font-medium font-montserrat text-secondary">Sertifikat #{{index + 1 }}</span>
             <div class=" grid grid-cols-3 gap-x-4">
-                <Input  label="Tahun Masuk"   v-model="item.TahunMasuk"/>
+                <Input type="number"  label="Tahun Masuk"   v-model="item.TahunMasuk"/>
                 <Input  label="Penyelenggara" v-model="item.Penyelenggara" class=" col-span-2"/>
             </div>
             <Input  label="Nama Kegiatan" v-model="item.NamaKegiatan" placeholder="Ex : Pelatihan Akutansi Dasar"/>

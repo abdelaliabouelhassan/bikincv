@@ -3,8 +3,8 @@
         <div class=" w-full flex flex-col items-start space-y-4 pb-8" :class="{'pt-8': index > 0}" v-for="(item,index,key) in form" :key="key">
             <span class=" text-[18.75px] font-medium font-montserrat text-secondary">Pendidikan #{{index + 1}}</span>
             <div class=" grid grid-cols-2 gap-x-4">
-                <Input  label="Tahun Masuk" v-model="item.TahunMasuk" />
-                <Input  label="Tahun Selesai" v-model="item.TahunSelesai"/>
+                <Input type="number" label="Tahun Masuk" v-model="item.TahunMasuk" />
+                <Input type="number" label="Tahun Selesai" v-model="item.TahunSelesai"/>
             </div>
             <Input  label="Universitas / Sekolah" placeholder="Ex : Universitas Sumatera Utara" v-model="item.Universitas"/>
             <Input  label="Jurusan" placeholder="Ex : Ekonomi" v-model="item.Jurusan"/>

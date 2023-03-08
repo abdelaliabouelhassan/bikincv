@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-      <div id="containerSelect" class=" w-full fixed bottom-0 z-50  inset-x-0 max-w-[375px] m-auto" v-if="show">
+      <div id="containerSelect" class=" w-full fixed bottom-0 z-50  inset-x-0 max-w-[375px] m-auto"  v-if="show">
         <div class=" w-full bg-white px-5 pt-1 pb-4" style="border-radius: 20px 20px 0px 0px;">
             <div class=" w-full flex cursor-pointer" @click="show = false">
                 <div class=" w-[70px] h-[5px] bg-[#9B9B9B] rounded-full m-auto"></div>
@@ -69,6 +69,7 @@ const props =  defineProps({
     input.value.blur();
   };
   const updateValue = (value) => {
+    show.value = false;
     emit('update:modelValue', value)
   }
    const handleClickOutside = (event) => {

@@ -1,20 +1,22 @@
 <template>
     <div class=" w-full">
         <div class=" w-full flex flex-col items-start space-y-4">
-           <div class=" flex flex-col items-start space-y-2">
-               <span class=" text-[15px] text-secondary font-medium font-montserrat">Deskripsi Diri</span>
-                <div class=" w-full p-5 bg-background rounded-2xl">
-                    <p class=" text-xs text-[#48494A52] italic font-medium font-montserrat">
-                        <span class=" font-semibold">Ex :</span> Saya merupakan S1 Lulusan Ekonomi Universitas  _____. Seorang yang sangat teliti dalam hal pembukuan, serta memiliki sifat tanggung jawab dan berpengalaman dalam memecahkan masalah. Selama Kuliah saya aktif di organisasi ____ sebagai ketua, serta pernah memenangkan kompetisi ____. Kini sedang mencari kerja khususnya di bidang finance untuk membuka gerbang karir di sektor accounting.
-                    </p>
-                </div>
+           <div class=" flex flex-col items-start space-y-2 w-full">
+               <span class=" text-[15px] text-secondary font-medium font-montserrat">Deskripsi Diri</span>  
+               <textarea name="" id=""  rows="8" class="  w-full p-5  rounded-2xl outline-none text-xs text-[#48494A52] italic font-medium font-montserrat bg-background"></textarea>
            </div>
             <Input label="Nama  Panggilan" v-model="form.NamaPanggilan"  />
             <Input label="Nama  Lengkap" v-model="form.NamaLengkap"/>
-           <div class=" grid grid-cols-3 gap-x-4">
-                 <Input label="Tempat Lahir" class=" col-span-2" v-model="form.TempatLahir"/>
-                 <Input label="Tanggal Lahir" class=" col-span-1" v-model="form.TanggalLahir"/>
+           <div class="  w-full">
+                 <Input label="Tempat Lahir"  v-model="form.TempatLahir"/>
+                
            </div>
+            <div class=" w-full flex flex-col items-start space-y-2">
+                     <span  class=" text-xs text-secondary font-normal font-montserrat">tanggal lahir</span>
+                   <div class=" w-full p-1 rounded-xl bg-background">
+                     <VueDatePicker v-model="form.TanggalLahir" :enable-time-picker="false"></VueDatePicker>
+                   </div>
+                 </div>
             <SelectInput label="Agama" v-model="form.Status" :options="[
              {lable:'Islam',value:'islam'},
              {lable:'Kristen - Katolik',value:'Kristen - Katolik'},
@@ -46,6 +48,9 @@
 <script setup>
  import Input from '@/components/UI/Input.vue'
  import SelectInput from '@/components/UI/SelectInput.vue'
+ import VueDatePicker from '@vuepic/vue-datepicker';
+ import '@vuepic/vue-datepicker/dist/main.css'
+
  const name = ref('');
  const agama = ref('');
  const form = ref({
@@ -62,3 +67,28 @@
 
  });
 </script>
+
+
+<style scoped>
+.dp__theme_light {
+    --dp-background-color: #F8F9FA;
+    --dp-text-color: #4F4F4F;
+    --dp-hover-color: #f3f3f3;
+    --dp-hover-text-color: #212121;
+    --dp-hover-icon-color: #959595;
+    --dp-primary-color: #1976d2;
+    --dp-primary-text-color: #f8f5f5;
+    --dp-secondary-color: #c0c4cc;
+    --dp-border-color: none;
+    --dp-menu-border-color: #ddd;
+    --dp-border-color-hover: #aaaeb7;
+    --dp-disabled-color: #f6f6f6;
+    --dp-scroll-bar-background: #f3f3f3;
+    --dp-scroll-bar-color: #959595;
+    --dp-success-color: #76d275;
+    --dp-success-color-disabled: #a3d9b1;
+    --dp-icon-color: #959595;
+    --dp-danger-color: #ff6f60;
+    --dp-highlight-color: rgba(25, 118, 210, 0.1);
+ }
+</style>
